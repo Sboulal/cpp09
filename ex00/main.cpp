@@ -6,11 +6,11 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 20:05:56 by saboulal          #+#    #+#             */
-/*   Updated: 2024/09/10 12:49:02 by saboulal         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:44:40 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include " BitcoinExchange.hpp"
+#include "BitcoinExchange.hpp"
 #include <iostream>
 #include<fstream>
 
@@ -43,11 +43,19 @@ int main(int argc,char **argv)
     else
     {
         std::string line;
+        
+        
+        if(std::getline(file, line))
+        {
+            if(line != "date | value")
+            {
+                std::cout << "Error: Not Valid" << std::endl;
+                return 1;
+            }
+        }
         while(std::getline(file, line))
         {
-           if(line == "data | value")
-                break;
            std::cout << line << std::endl;
         }
     }
-}
+} 

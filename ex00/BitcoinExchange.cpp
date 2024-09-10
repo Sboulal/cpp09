@@ -1,4 +1,4 @@
-#include"BicoinExchange.hpp"
+#include"BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange() : rate(0), amount(0) {}
 

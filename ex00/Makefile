@@ -1,6 +1,6 @@
 NAME = btc
 
-SRCS =  main.cpp  
+SRCS =  main.cpp BitcoinExchange.cpp
 
 CC = c++
 
@@ -10,7 +10,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp 
+%.o: %.cpp BitcoinExchange.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 $(NAME): $(OBJS) 
