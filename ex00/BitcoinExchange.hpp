@@ -7,21 +7,13 @@
 class BitcoinExchange
 {   
     private:
-        std::map<std::string, double> exchangeRate;
-        double rate;
-        double amount;
+        std::map<std::string, std::string> _exchange;
     public:
         BitcoinExchange();
         ~BitcoinExchange();
         BitcoinExchange(const BitcoinExchange &other);
         BitcoinExchange &operator=(const BitcoinExchange &other);
-        void setRate(double rate);
-        double getRate() const;
-        void setAmount(double amount);
-        double getAmount() const;
-        double convertToBitcoin() const;
-        double convertToUsd() const;
 
-
+       
 };
 #endif
