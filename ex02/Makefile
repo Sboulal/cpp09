@@ -1,6 +1,7 @@
-NAME = btc
+NAME = PmergeMe
 
-SRCS =  main.cpp BitcoinExchange.cpp
+SRCS =  main.cpp\
+		PmergeMe.cpp
 
 CC = c++
 
@@ -10,7 +11,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp BitcoinExchange.hpp
+%.o: %.cpp PmergeMe.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 $(NAME): $(OBJS) 

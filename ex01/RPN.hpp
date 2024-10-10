@@ -4,20 +4,38 @@
 #include <iostream>
 #include <stack>
 #include <sstream>
-
+#include <cmath>
 
 class RPN
 {
+private:
+    std::stack<int> _stack;
+
+    typedef int (RPN::*func)(int, int);
+    struct do_op {
+        std::string op;
+        func f;
+    };
+
+    do_op oper[5];
+
+    int add(int a, int b);
+    int sub(int a, int b);
+    int mul(int a, int b);
+    int div(int a, int b);
+    int pow(int a, int b);
+
+    int         index_of(std::string str, std::string *arr, int size);
+    int         ft_stoi(const std::string& str);
+    std::string ft_all_of(const std::string& str, int (*isDigit)(int));
+
 public:
     RPN();
+    RPN(RPN const &other);
+    RPN &operator=(RPN const &other);
     ~RPN();
-    RPN(const RPN &other);
-    RPN &operator=(const RPN &other);
-    void calculate(std::string input);
-    void printResult() const;
 
-private:
-    double _result;
+    void run(std::string input);
 };
 
 #endif

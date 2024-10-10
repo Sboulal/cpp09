@@ -7,13 +7,8 @@ int main(int argc, char **argv)
         std::cerr << "Usage: ./rpn \"[expression]\"" << std::endl;
         return 1;
     }
-   try{ 
     RPN rpn;
-    rpn.calculate(argv[1]);
-    rpn.printResult();}
-    catch(std::exception &e)
-    {
-        std::cerr << "Error" << std::endl;
-    }
+
+    rpn.run(argv[1]);
     return 0;
 }
